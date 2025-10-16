@@ -1,0 +1,122 @@
+/* ======= Tema ======= */
+:root {
+  --bg: #0a0f1a;
+  --card: #0f1724;
+  --ink: #e6edf3;
+  --muted: #9bb0c9;
+  --brand: #6aa6ff;
+  --accent: #1ed490;
+  --danger: #ff6b6b;
+  --warn: #ffd36e;
+  --border: #233049;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  background: radial-gradient(1200px 600px at 20% -10%, #11203a 0%, transparent 35%),
+              radial-gradient(1200px 600px at 100% 0%, #141c2c 0%, transparent 30%), var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* ======= Layout ======= */
+.container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+.card {
+  background: linear-gradient(180deg, #10182a, #0e1626);
+  border: 1px solid var(--border);
+  border-radius: 18px; padding: 1.4rem; box-shadow: var(--shadow);
+}
+.title { font-size: 2rem; margin: 0 0 .25rem }
+.sub { color: var(--muted); margin: 0 0 1rem }
+.row { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center }
+.badge {
+  background: #0b1422; border: 1px solid var(--border); color: var(--muted);
+  padding: .25rem .55rem; border-radius: 999px; font-size: .8rem;
+}
+
+.hr { height: 1px; background: var(--border); border: 0; margin: 1.2rem 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1rem;
+}
+.panel {
+  background: #0c1321;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+h3 { margin: .25rem 0 1rem }
+
+/* ======= Botões/inputs ======= */
+button, .select, select {
+  background: #0c1526;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: .5rem .75rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+button:hover, .select:hover, select:hover { border-color: #3b4e72; }
+button:active { transform: translateY(1px); }
+button.primary { background: #0f1e36; border-color: #2f4470; }
+button.ghost { background: transparent; }
+
+.btns { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+/* ======= Árvore ======= */
+.tree .node { padding: .35rem .5rem; border-left: 2px solid var(--border); margin-left: .5rem; }
+.name { font-weight: 600 }
+.meta { color: var(--muted); font-size: .85rem }
+
+/* ======= Indicadores ======= */
+.state {
+  display: inline-block; padding: .1rem .5rem; border-radius: 999px;
+  margin-left: .4rem; border: 1px solid var(--border); font-size: .8rem;
+}
+.ok { color: var(--accent) }
+.err { color: var(--danger) }
+.warn { color: var(--warn) }
+
+/* ======= Cards de status ======= */
+.code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  background: #0b1422; border: 1px solid var(--border); border-radius: 12px;
+  padding: .7rem .9rem;
+}
+
+/* ======= Medidores ======= */
+.meter {
+  height: 8px; background: #0a1220; border: 1px solid var(--border);
+  border-radius: 999px; overflow: hidden;
+}
+.meter > div {
+  height: 100%;
+  background: linear-gradient(90deg, #5ea1ff, #1ed490);
+  width: 0%;
+  transition: width .2s ease;
+}
+
+/* ======= rodapé ======= */
+.small { font-size: .9rem; color: var(--muted); }
+a { color: var(--brand) }
+
+
+/* --- Fix: evitar sobreposição dos <code> com o texto --- */
+.small { line-height: 1.5; }                 /* aumenta a altura da linha no parágrafo informativo */
+
+.code {
+  display: inline-block;                      /* faz o badge participar do fluxo e da altura da linha */
+  padding: .25rem .45rem;                     /* padding um pouco menor para caber bem na linha */
+  line-height: 1.1;                           /* altura interna do badge */
+  vertical-align: baseline;                   /* alinha com o texto, sem “pular” */
+  margin: 0 .25rem .15rem;                    /* espaço lateral e um tiquinho abaixo */
+}
+
+.small .code {                                /* só nos parágrafos “small” */
+  white-space: nowrap;                         /* evita quebrar o badge no meio */
+}
