@@ -1,0 +1,35 @@
+---
+import MediaCenter from "../components/MediaCenter";
+---
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bridge + Composite — Media Center (Astro + React)</title>
+    <link rel="stylesheet" href="/styles.css" >
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1 class="title">Bridge + Composite — Media Center</h1>
+        <p class="sub">
+          <strong>Bridge</strong>: separa a abstração (controles/Remotes) das implementações (dispositivos/Devices).<br/>
+          <strong>Composite</strong>: organiza os dispositivos em árvore (ex.: Casa → Sala → TV).
+        </p>
+        <div class="row">
+          <span class="badge">Astro + React</span>
+          <span class="badge">TypeScript</span>
+          <span class="badge">Padrões: Bridge & Composite</span>
+        </div>
+        <hr class="hr" />
+        <MediaCenter client:load />
+        <hr class="hr" />
+        <p class="small">
+          Onde estão os padrões? Bridge: <code class="code">src/components/patterns/bridge/*</code>.
+          Composite: <code class="code">src/components/patterns/composite/*</code>.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
