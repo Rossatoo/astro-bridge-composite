@@ -9,7 +9,7 @@ export class Remote {
     this.device.isEnabled() ? this.device.disable() : this.device.enable();
   }
 
-  // Agora volume altera de 1 em 1
+  
   volumeDown() { this.device.setVolume(this.device.getVolume() - 1); }
   volumeUp()   { this.device.setVolume(this.device.getVolume() + 1); }
 
